@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="contact_list_view" model="ir.ui.view">
+        <field name="name">contact.list.view</field>
+        <field name="model">contact.profile</field>
+        <field name="arch" type="xml">
+        <tree>
+            <field name="name" />
+            <field name="email" />
+            <field name="phone" />
+        </tree>
+        </field>
+    </record>
+
+    <record id="contact_form_view" model="ir.ui.view">
+        <field name="name">contact.form.view</field>
+        <field name="model">contact.profile</field>
+        <field name="arch" type="xml">
+        <form>
+            <group>
+                <field name="name" />
+                <field name="email" />
+                <field name="phone" />
+            </group>
+        </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_contact_profile">
+      <field name="name"> contact Profile </field>
+      <field name="res_model">contact.profile</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="contact_root_menu" name="contact" />
+    <menuitem id="contact_sub_menu" parent="contact_root_menu" />
+    <menuitem id="contact_profile_menu" action="action_contact_profile" parent="contact_sub_menu"/>
+</odoo>
+
+    
