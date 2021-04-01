@@ -18,9 +18,15 @@
         <field name="arch" type="xml">
         <form>
             <group>
+                <group>
                 <field name="name" />
                 <field name="email" />
                 <field name="phone" />
+                </group>
+                <group>
+                <field name="person_image" widget="image"/>
+                </group>
+                
             </group>
         </form>
         </field>
